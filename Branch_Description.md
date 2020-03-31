@@ -1,0 +1,4 @@
+# Branch Description
+
+## Basics
+Basics is a branch that essentially presents the "Hello world" version of the program. Using only cin and cout, no variables, and no if statements or other advanced control loops. The game is being coded in VSCode, using the MinGW compiler. VSCode's website has excellent tutorials for getting started, as the game evolves and gets more complex, there will eventually be a make file associated with it. To put off make files as much as possible, the game will be kept to one script for as long as is reasonable. In this branch, the game will print out a "title screen" and ask the user to make a selection. The selection doesn't do anything, and the program exits as soon as a choice is made.
