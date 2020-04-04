@@ -1,6 +1,6 @@
 # Claudius: Praetorian Prefect
 
-This game is more of a learning project than anything else, aimed at using basic C++ concepts to build a text based strategy game set in the late Roman empire (hence the name which abbreviates to CPP). 
+This game is more of a learning project than anything else, aimed at using basic C++ concepts to build a text based strategy game set in the late Roman empire (hence the name which abbreviates to CPP). For an overview of what each branch is doing (aside from looking at commit history) the Branch_description.md doc goes over everything in detail.
 
 ## Goals
 This is intended to demonstrate C++ concepts like string manipulation, OOP, and streams. Each iteration of the game will be stored in a separate branch, checking out each branch will showcase different concepts as the game grows in complexity.
