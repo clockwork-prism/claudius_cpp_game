@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Gameplay"
-    ]
+    ],
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
