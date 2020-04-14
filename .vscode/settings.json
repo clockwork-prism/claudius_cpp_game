@@ -3,6 +3,7 @@
         "Gameplay"
     ],
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp"
     }
 }

@@ -9,3 +9,6 @@ Makes use of variables for displaying the title screen. Constants are used for t
 ## Arrays
 Instead of variables, title screen is created using a std::array object. While there is some repetition, the full screen is visible in the array initialization. Also, now the screen printing is much cleaner and makes more sense. Once for loops are introduced, the titleScreen variable will be created in a much more straightforward way. Printing out the full title screen will also become much better.
 
+## IfElseIf
+Almost a game! Introduces if else statements to the "game", where the selection actually leads to different outcomes. A pure if else based game would be incredibly difficult to execute, however, so again only a concept is demonstrated. The next branch will finally make this a real game by introducing loops.
+
