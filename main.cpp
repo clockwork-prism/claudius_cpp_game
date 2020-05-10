@@ -15,7 +15,8 @@ int main() {
     int BritishLegions {5000};
     int ClaudiusRep {0};
     int BarbariansInvaded {0};
-    string state {"playing"};
+    enum GameState {playing, victory, defeat};
+    GameState state = playing;
     
     array <string, 5> titleScreen {
         " ------------------------------------------------------------ ",
@@ -192,9 +193,9 @@ int main() {
                     SeverusArmySize -= 2500;
                 }
                 if (ClaudiusArmySize > SeverusArmySize) {
-                    state = "victory";
+                    state = victory;
                 } else {
-                    state = "defeat";
+                    state = defeat;
                 }
                 break;
             }
@@ -231,9 +232,9 @@ int main() {
                 break;
         }
 
-    } while (choice != 'Q' && state == "playing");
+    } while (choice != 'Q' && state == playing);
     cout << sceneBreak;
-    if (state == "victory") {
+    if (state == victory) {
         cout << "As the dust clears, you see Severus's army either surrendering" << endl;
         cout << "or fleeing. You give orders for generous quarter to be given," << endl;
         cout << "and search out Severus. You find him dead, a slave having assisted" << endl;
