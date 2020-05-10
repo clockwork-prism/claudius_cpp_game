@@ -12,3 +12,6 @@ Instead of variables, title screen is created using a std::array object. While t
 ## IfElseIf
 Almost a game! Introduces if else statements to the "game", where the selection actually leads to different outcomes. A pure if else based game would be incredibly difficult to execute, however, so again only a concept is demonstrated. The next branch will finally make this a real game by introducing loops.
 
+## Loops
+AKA "Finally a Real Game!" This branch introduces while loops, and finally creates a game like experience. Also introduced are enums and switch statements, which help streamline the process of creating games with different states. 
+
