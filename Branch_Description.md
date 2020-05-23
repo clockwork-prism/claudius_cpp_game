@@ -15,3 +15,6 @@ Almost a game! Introduces if else statements to the "game", where the selection 
 ## Loops
 AKA "Finally a Real Game!" This branch introduces while loops, and finally creates a game like experience. Also introduced are enums and switch statements, which help streamline the process of creating games with different states. 
 
+## Functions
+Side note: coding this much without function calls was almost physically painful. Now the code is nicely abstracted away into functions with just a clean game loop. This will make it a bit more readable, and modifiable. 
+
