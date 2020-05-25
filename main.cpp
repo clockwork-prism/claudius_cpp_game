@@ -8,7 +8,6 @@ using namespace std;
 // Forward declarations
 
 void print_message(const vector <string> &message);
-bool char_in_vector(const char item, const vector<char> &v);
 void get_choice();
 void game_start();
 void print_stats();
@@ -73,22 +72,9 @@ int main() {
 
 // ***************************************************************************************
 
-void print_message(const vector <string> &message) {
-    for (const auto &s: message) {
-        cout << s << endl;
-    }
-}
 
-bool char_in_vector(const char item, const vector<char> &v) {
-    bool out{false};
-    for (auto c: v) {
-        if (c == item) {
-            out = true;
-            break;
-        }
-    }
-    return out;
-}
+
+
 
 void get_choice() {
     print_message(detailedChoices);
