@@ -3,39 +3,41 @@
 
 #include <vector>
 #include <string>
+#include "menu.h"
+#include "army.h"
 
 enum Phase {starting, playing, victory, defeat};
-enum Location {Iberia, Britain, Gaul, Danube, Italy, Beginning};
 
-struct GameState {
+class GameState {
+private:
+    Army claudius;
+    Army britishLegions;
+    Army danubeLegions;
+    Army goths;
+    Army severus;
+    std::vector <std::string> message;
 
-    char choice {'G'};
+public:
+    GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_);
 
-    int ClaudiusRep {0};
+    Phase currentPhase;
+    Menu menu;
+    int barbariansInvaded;
 
-    Phase phase {starting};
-
-    std::vector <std::string> titleScreen {
-        " ------------------------------------------------------------ ",
-        "|                                                            |",
-        "|             Claudius: Praetorian Prefect                   |",
-        "|                                                            |",
-        " ------------------------------------------------------------ "
-    };
-    std::string sceneBreak {"\n==============================================================\n\n"};
-    std::vector <std::string> message {};
-    std::vector <std::string> detailedChoices {};
-    std::vector <char> validChoices {};
-
-    Location ClaudiusLoc {Beginning};
-
-    int ClaudiusArmySize {10000};
-    int SeverusArmySize {12000};
-
-    int DanubeLegions {5000};
-    int BritishLegions {5000};
-
-    int BarbariansInvaded {0};
+    void display_message() {print_message(message);}
+    void clear_message() {message.clear();}
+    void update_message(std::vector <std::string> newMessage) {
+        message.insert(message.end(), newMessage.begin(), newMessage.end());
+    }
+    void reputation_gained(int rep) {claudius.reputation += rep;}
+    void move_location(Location loc) {claudius.location = loc;}
+    bool danube_garrisoned() {return danubeLegions.size > 0;}
+    bool britain_garrisoned() {return britishLegions.size > 0;}
+    bool severus_battle() {return claudius.size > severus.size;};
+    bool danube_joins_claudius();
+    bool british_joins_claudius();
+    void goth_battle();
+    bool severus_defects(int defectionSize);
 };
 
 #endif //_GAMESTATE_H_
