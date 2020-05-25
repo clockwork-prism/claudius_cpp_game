@@ -7,6 +7,6 @@ struct Army {
     int size;
     Location location;
     int reputation;
-}
+};
 
 #endif

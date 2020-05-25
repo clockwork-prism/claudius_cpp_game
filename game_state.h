@@ -16,13 +16,15 @@ private:
     Army goths;
     Army severus;
     std::vector <std::string> message;
+    int defectionSize;
 
 public:
-    GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_);
+    GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
 
     Phase currentPhase;
     Menu menu;
     int barbariansInvaded;
+    char choice;
 
     void display_message() {print_message(message);}
     void clear_message() {message.clear();}
@@ -30,14 +32,16 @@ public:
         message.insert(message.end(), newMessage.begin(), newMessage.end());
     }
     void reputation_gained(int rep) {claudius.reputation += rep;}
-    void move_location(Location loc) {claudius.location = loc;}
     bool danube_garrisoned() {return danubeLegions.size > 0;}
     bool britain_garrisoned() {return britishLegions.size > 0;}
-    bool severus_battle() {return claudius.size > severus.size;};
+    Location get_claudius_loc() {return claudius.location;}
+    void move_location();
     bool danube_joins_claudius();
     bool british_joins_claudius();
     void goth_battle();
-    bool severus_defects(int defectionSize);
+    void print_stats();
+    bool severus_defects();
+    void severus_battle();
 };
 
 #endif //_GAMESTATE_H_
