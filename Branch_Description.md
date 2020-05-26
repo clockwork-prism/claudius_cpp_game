@@ -18,3 +18,5 @@ AKA "Finally a Real Game!" This branch introduces while loops, and finally creat
 ## Functions
 Side note: coding this much without function calls was almost physically painful. Now the code is nicely abstracted away into functions with just a clean game loop. This will make it a bit more readable, and modifiable. 
 
+## Classes
+The main thing this update has taught me is the important of ground work. I knew implementing classes and functions so late in the game would be hard and require massive refactoring, but now the game avoids using global variables with some structs and classes to pass values along. Probably more complicated than is strictly necessary, but that is the point of this.

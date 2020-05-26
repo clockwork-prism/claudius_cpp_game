@@ -33,3 +33,4 @@
 
 #VSCode Settings
 .vs
+.vscode/c_cpp_properties.json
