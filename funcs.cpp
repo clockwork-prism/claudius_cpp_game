@@ -1,6 +1,6 @@
 #include "funcs.h"
 
-void main_game_loop(GameState &gameState, int sceneWidth = 72) {
+void main_game_loop(GameState &gameState, int sceneWidth) {
     gameState.clear_message();
     scene_break(sceneWidth);
     process_location_events(gameState);
@@ -230,4 +230,12 @@ void game_end(GameState &gameState) {
     }
 
     std::cout << "GAME OVER" << std::endl;
+}
+
+void scene_break(int sceneWidth) {
+    std::cout << "\n";
+    for (int i; i < sceneWidth; i++) {
+        std::cout << "=";
+    }
+    std::cout << "\n\n";
 }

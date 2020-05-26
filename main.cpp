@@ -4,51 +4,37 @@
 #include <string>
 #include "funcs.h"
 #include "utils.h"
+#include "game_state.h"
 
 using namespace std;
-
-// Global Variables
-
-char choice {'G'};
-
-int ClaudiusRep {0};
-
-GameState state {starting};
-
-vector <string> titleScreen {
-    " ------------------------------------------------------------ ",
-    "|                                                            |",
-    "|             Claudius: Praetorian Prefect                   |",
-    "|                                                            |",
-    " ------------------------------------------------------------ "
-};
-string sceneBreak {"\n==============================================================\n\n"};
-vector <string> message {};
-vector <string> detailedChoices {};
-vector <char> validChoices {};
-
-Location ClaudiusLoc {Beginning};
-
-int ClaudiusArmySize {10000};
-int SeverusArmySize {12000};
-
-int DanubeLegions {5000};
-int BritishLegions {5000};
-
-int BarbariansInvaded {0};
 
 
 // ***************************************************************************************
 
 int main() {
 
-    print_message(titleScreen);
+    print_message({
+        " ------------------------------------------------------------ ",
+        "|                                                            |",
+        "|             Claudius: Praetorian Prefect                   |",
+        "|                                                            |",
+        " ------------------------------------------------------------ "
+    });
+
+    GameState gameState {
+        Army {10000, Beginning, 0}, // Claudius
+        Army {5000, Britain, 1}, // British
+        Army {5000, Danube, 0}, // Danube
+        Army {2000, Gaul, 1}, // Goths
+        Army {12000, Italy, 2}, // Severus
+        2500 // Defection Size
+    };
 
     do {
-        main_game_loop();
-    } while (choice != 'Q' && (state == playing || state == starting));
+        main_game_loop(gameState);
+    } while (gameState.choice != 'Q' && (gameState.currentPhase == playing || gameState.currentPhase == starting));
 
-    game_end();
+    game_end(gameState);
 
     return 0;
 }

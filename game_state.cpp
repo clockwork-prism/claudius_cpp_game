@@ -17,7 +17,7 @@ GameState::GameState(Army claudius_, Army british_, Army danube_, Army goths_, A
 }
 
 bool GameState::danube_joins_claudius() {
-    if (claudius.reputation > danubeLegions.reputation) {
+    if (claudius.reputation >= danubeLegions.reputation) {
         claudius.size += danubeLegions.size;
         danubeLegions.size = 0;
         return true;
@@ -26,7 +26,7 @@ bool GameState::danube_joins_claudius() {
 }
 
 bool GameState::british_joins_claudius() {
-    if (claudius.reputation > britishLegions.reputation) {
+    if (claudius.reputation >= britishLegions.reputation) {
         claudius.size += britishLegions.size;
         britishLegions.size = 0;
         return true;
@@ -42,7 +42,7 @@ void GameState::goth_battle() {
 }
 
 bool GameState::severus_defects() {
-    if (claudius.reputation > severus.reputation) {
+    if (claudius.reputation >= severus.reputation) {
         claudius.size += defectionSize;
         severus.size -= defectionSize;
         return true;
