@@ -59,12 +59,7 @@ void GameState::severus_battle() {
 }
 
 void GameState::print_stats() {
-    std::cout << "\nArmy: " << claudius.size << ", Reputation: ";
-    std::cout << (
-        (claudius.reputation == 0) ? "Unkown"   : 
-        (claudius.reputation == 1) ? "Renowned" : 
-                                     "Exalted"
-    );
+    std::cout << claudius;
     std::cout << std::endl << "Severus Army: " << severus.size << std::endl;
 }
 

@@ -6,8 +6,7 @@
             "label": "g++.exe build active file",
             "command": "C:\\MinGW\\bin\\g++.exe",
             "args": [
-                "-g",
-                "main.cpp menu.cpp utils.cpp funcs.cpp game_state.cpp",
+                "main.cpp", "menu.cpp", "utils.cpp", "funcs.cpp", "game_state.cpp", "army.cpp",
                 "-o",
                 "${fileDirname}\\main.exe"
             ],
