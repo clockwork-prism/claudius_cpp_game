@@ -18,7 +18,7 @@ GameState::GameState(Army claudius_, Army british_, Army danube_, Army goths_, A
 
 bool GameState::danube_joins_claudius() {
     if (claudius.reputation >= danubeLegions.reputation) {
-        claudius.size += danubeLegions.size;
+        claudius += danubeLegions;
         danubeLegions.size = 0;
         return true;
     }
@@ -27,7 +27,7 @@ bool GameState::danube_joins_claudius() {
 
 bool GameState::british_joins_claudius() {
     if (claudius.reputation >= britishLegions.reputation) {
-        claudius.size += britishLegions.size;
+        claudius += britishLegions;
         britishLegions.size = 0;
         return true;
     }
@@ -35,7 +35,7 @@ bool GameState::british_joins_claudius() {
 }
 
 void GameState::goth_battle() {
-    claudius.size -= goths.size;
+    claudius -= goths;
     claudius.reputation += goths.reputation;
     goths.size = 0;
     barbariansInvaded = 2;
@@ -43,8 +43,8 @@ void GameState::goth_battle() {
 
 bool GameState::severus_defects() {
     if (claudius.reputation >= severus.reputation) {
-        claudius.size += defectionSize;
-        severus.size -= defectionSize;
+        claudius += defectionSize;
+        severus -= defectionSize;
         return true;
     }
     return false;
@@ -59,12 +59,7 @@ void GameState::severus_battle() {
 }
 
 void GameState::print_stats() {
-    std::cout << "\nArmy: " << claudius.size << ", Reputation: ";
-    std::cout << (
-        (claudius.reputation == 0) ? "Unkown"   : 
-        (claudius.reputation == 1) ? "Renowned" : 
-                                     "Exalted"
-    );
+    std::cout << claudius;
     std::cout << std::endl << "Severus Army: " << severus.size << std::endl;
 }
 
