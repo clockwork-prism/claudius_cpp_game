@@ -6,9 +6,11 @@
             "label": "g++.exe build active file",
             "command": "C:\\MinGW\\bin\\g++.exe",
             "args": [
-                "main.cpp", "menu.cpp", "utils.cpp", "funcs.cpp", "game_state.cpp", "army.cpp",
+                "-I",
+                "${workspaceFolder}\\include",
+                "${workspaceFolder}\\src\\*.cpp",
                 "-o",
-                "${fileDirname}\\main.exe"
+                "${workspaceFolder}\\main.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
