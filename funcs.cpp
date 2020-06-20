@@ -47,27 +47,27 @@ void game_start(GameState &gameState) {
 
 void process_location_events(GameState &gameState) {
     switch (gameState.get_claudius_loc()) {
-        case Beginning: {
+        case eBeginning: {
             game_start(gameState);
             break;
         }
-        case Gaul:{
+        case eGaul:{
             gaul_loc_events(gameState);
             break;
         }
-        case Iberia: {
+        case eIberia: {
             iberia_loc_events(gameState);
             break;
         }
-        case Britain: {
+        case eBritain: {
             briain_loc_events(gameState);
             break;
         }
-        case Danube: {
+        case eDanube: {
             danube_loc_events(gameState);
             break;
         }
-        case Italy: {
+        case eItaly: {
             italy_loc_events(gameState);
             break;
         }

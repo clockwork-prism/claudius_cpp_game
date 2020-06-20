@@ -66,27 +66,27 @@ void GameState::print_stats() {
 void GameState::move_location() {
     switch (choice) {
         case 'Z': {
-            claudius.location = Beginning;
+            claudius.location = eBeginning;
             break;
         }
         case 'B': {
-            claudius.location = Britain;
+            claudius.location = eBritain;
             break;
         }
         case 'I': {
-            claudius.location = Italy;
+            claudius.location = eItaly;
             break;
         }
         case 'G': {
-            claudius.location = Gaul;
+            claudius.location = eGaul;
             break;
         }
         case 'E': {
-            claudius.location = Iberia;
+            claudius.location = eIberia;
             break;
         }
         case 'D': {
-            claudius.location = Danube;
+            claudius.location = eDanube;
             break;
         }
         case 'Q':{
