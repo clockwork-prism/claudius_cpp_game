@@ -41,7 +41,7 @@ Gaul::Gaul(Army _local_army, int *_bi) : Region{_local_army}  {
 }
 
 Gaul::~Gaul() {
-    delete pBarbariansInvaded;
+    pBarbariansInvaded = nullptr;
 }
 
 std::tuple<std::vector<std::string>, Phase> Gaul::location_events(Army &claudius) {

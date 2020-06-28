@@ -4,7 +4,32 @@
         {
             "type": "shell",
             "label": "g++.exe build active file",
-            "command": "D:\\MinGW64\\\\mingw64\\bin\\g++.exe",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-I",
+                "${workspaceFolder}\\include",
+                "-I",
+                "${workspaceFolder}\\include\\regions",
+                "${workspaceFolder}\\src\\*.cpp",
+                "${workspaceFolder}\\src\\regions\\*.cpp",
+                "-o",
+                "${workspaceFolder}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            }, 
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build active file - w64",
+            "command": "D:\\MinGW64-v7-3\\\\mingw64\\bin\\g++.exe",
             "args": [
                 "-I",
                 "${workspaceFolder}\\include",

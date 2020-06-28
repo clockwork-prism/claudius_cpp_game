@@ -15,6 +15,8 @@ struct World {
     Region *iberia {nullptr};
     Region *beginning {nullptr};
 
+    int *pBarbariansInvaded {nullptr};
+
     World(Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
     ~World();
 };
