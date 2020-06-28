@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-enum Location {Iberia, Britain, Gaul, Danube, Italy, Beginning};
+enum Location {eIberia, eBritain, eGaul, eDanube, eItaly, eBeginning};
 
 struct Army {
     int size;
