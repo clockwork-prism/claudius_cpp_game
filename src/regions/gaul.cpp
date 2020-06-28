@@ -1,6 +1,6 @@
 #include "gaul.h"
 
-Gaul::Gaul(Army _local_army, int *_bi) : Region{_local_army}  {
+Gaul::Gaul(Army _local_army, std::shared_ptr<int> _bi) : Region{_local_army}  {
     pBarbariansInvaded = _bi;
 
     messages = {

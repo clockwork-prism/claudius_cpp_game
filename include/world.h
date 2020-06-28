@@ -6,19 +6,20 @@
 #include "italy.h"
 #include "iberia.h"
 #include "beginning.h"
+#include <memory>
 
 struct World {
-    Region *gaul {nullptr};
-    Region *danube {nullptr};
-    Region *britain {nullptr};
-    Region *italy {nullptr};
-    Region *iberia {nullptr};
-    Region *beginning {nullptr};
+    std::shared_ptr<Region> gaul;
+    std::shared_ptr<Region> danube;
+    std::shared_ptr<Region> britain;
+    std::shared_ptr<Region> italy;
+    std::shared_ptr<Region> iberia;
+    std::shared_ptr<Region> beginning;
 
-    int *pBarbariansInvaded {nullptr};
+    std::shared_ptr<int> pBarbariansInvaded;
 
     World(Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
-    ~World();
+    ~World() = default;
 };
 
 #endif // _WORLD_H_
