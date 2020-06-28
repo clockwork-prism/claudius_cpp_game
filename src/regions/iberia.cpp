@@ -1,9 +1,9 @@
 #include "iberia.h"
 
-Iberia::Iberia() {
-    pBarbariansInvaded = nullptr;
+Iberia::Iberia(Army _local_army, int *_bi) : Region{_local_army}  {
+    pBarbariansInvaded = _bi;
 
-    messages = std::vector<std::vector<std::string>> {
+    messages = {
         {
             "As you make camp in Iberia just beyond the mountains",
             "you receive dire news. Barbarians have invaded Gaul!",
@@ -31,11 +31,11 @@ Iberia::~Iberia() {
     pBarbariansInvaded = nullptr; // responsibility for cleanup lies elsewhere
 }
 
-std::vector<std::string> Iberia::location_events(Army &claudius) {
+std::tuple<std::vector<std::string>, Phase> Iberia::location_events(Army &claudius) {
     int out_index {1};
     if (*(this->pBarbariansInvaded) == 0) {
         out_index = 0;
         *(this->pBarbariansInvaded) = 1;
     } 
-    return this->messages.at(out_index);
+    return std::make_tuple(this->messages.at(out_index), Phase::playing);
 }

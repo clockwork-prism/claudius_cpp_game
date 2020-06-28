@@ -2,65 +2,16 @@
 
 GameState::GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_):
     claudius {claudius_}, 
-    britishLegions{british_}, 
-    danubeLegions {danube_}, 
-    goths {goths_},
-    severus {severus_},
-    defectionSize{defectionSize_},
-    message{}, 
-    menu{}, 
-    currentPhase {Phase::starting}, 
-    barbariansInvaded{0},
-    choice{}
+    currentPhase {Phase::starting},
+    choice{},
+    world{british_, danube_, goths_, severus_, defectionSize_}
     {
-
-}
-
-bool GameState::danube_joins_claudius() {
-    if (claudius.reputation >= danubeLegions.reputation) {
-        claudius += danubeLegions;
-        danubeLegions.size = 0;
-        return true;
-    }
-    return false;
-}
-
-bool GameState::british_joins_claudius() {
-    if (claudius.reputation >= britishLegions.reputation) {
-        claudius += britishLegions;
-        britishLegions.size = 0;
-        return true;
-    }
-    return false;
-}
-
-void GameState::goth_battle() {
-    claudius -= goths;
-    claudius.reputation += goths.reputation;
-    goths.size = 0;
-    barbariansInvaded = 2;
-}
-
-bool GameState::severus_defects() {
-    if (claudius.reputation >= severus.reputation) {
-        claudius += defectionSize;
-        severus -= defectionSize;
-        return true;
-    }
-    return false;
-}
-
-void GameState::severus_battle() {
-    if (claudius.size > severus.size) {
-        currentPhase = victory;
-    } else {
-        currentPhase = defeat;
-    }
+        currentRegion = world.beginning;
 }
 
 void GameState::print_stats() {
     std::cout << claudius;
-    std::cout << std::endl << "Severus Army: " << severus.size << std::endl;
+    std::cout << std::endl << "Severus Army: " << this->world.italy->get_army_size() << std::endl;
 }
 
 void GameState::move_location() {
@@ -71,22 +22,27 @@ void GameState::move_location() {
         }
         case 'B': {
             claudius.location = eBritain;
+            this->currentRegion = world.britain;
             break;
         }
         case 'I': {
             claudius.location = eItaly;
+            this->currentRegion = world.italy;
             break;
         }
         case 'G': {
             claudius.location = eGaul;
+            this->currentRegion = world.gaul;
             break;
         }
         case 'E': {
             claudius.location = eIberia;
+            this->currentRegion = world.iberia;
             break;
         }
         case 'D': {
             claudius.location = eDanube;
+            this->currentRegion = world.danube;
             break;
         }
         case 'Q':{

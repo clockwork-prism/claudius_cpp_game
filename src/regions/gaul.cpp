@@ -1,9 +1,9 @@
 #include "gaul.h"
 
-Gaul::Gaul() {
-    pBarbariansInvaded = new int {0};
+Gaul::Gaul(Army _local_army, int *_bi) : Region{_local_army}  {
+    pBarbariansInvaded = _bi;
 
-    messages = std::vector<std::vector<std::string>> {
+    messages = {
         {
             "You descend on Gaul and fan out your forces to confront the",
             "invaders. You lose some men, but your reputation grows higher!",
@@ -44,13 +44,13 @@ Gaul::~Gaul() {
     delete pBarbariansInvaded;
 }
 
-std::vector<std::string> Gaul::location_events(Army &claudius) {
+std::tuple<std::vector<std::string>, Phase> Gaul::location_events(Army &claudius) {
     int out_index {1};
     if (*(this->pBarbariansInvaded) == 1) {
         this->goth_battle(claudius);
         out_index = 0;
     }
-    return messages.at(out_index);
+    return std::make_tuple(this->messages.at(out_index), Phase::playing);
 }
 
 void Gaul::goth_battle(Army &claudius) {
