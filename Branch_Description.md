@@ -26,3 +26,6 @@ This branch adds in some operator overloads for the Army struct. + and \<\< are 
 
 ## Inheritance and Polymorphism
 This branch demonstrates the utility of inheritance and polymorphism. Rather than do these steps as separate branches, it made more sense to combine them. Now there are Region based objects which are stored in a World object, and the GameState has a currentRegion pointer that is used in the main loop. This makes the funcs file more steamlineed, even at the cost of yet more complexity. However, this is the first time since functions and loops that I feel the changes are actually helping. As it stands, I think this is a few more tweaks away from being a general purpose text game engine.
+
+## Smart Pointers
+Moving into modern C++. The pointers have been replaced by shared pointers, to make them more memory safe.
