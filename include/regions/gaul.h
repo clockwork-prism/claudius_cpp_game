@@ -5,15 +5,14 @@
 
 class Gaul: public Region {
     private:
-        int *pBarbariansInvaded;
+        std::shared_ptr<int> pBarbariansInvaded;
     public:
-        Gaul(Army _local_army, int *bi);
+        Gaul(Army _local_army, std::shared_ptr<int> bi);
         virtual ~Gaul();
         // TODO: add move and copy constructors to handle pointer
 
         virtual std::tuple<std::vector<std::string>, Phase> location_events(Army &claudius) override;
         void goth_battle(Army &claudius);
-        int *get_barbarians_invaded() {return pBarbariansInvaded;}
 };
 
 #endif // _GAUL_H_

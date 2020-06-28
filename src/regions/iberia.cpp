@@ -1,6 +1,6 @@
 #include "iberia.h"
 
-Iberia::Iberia(Army _local_army, int *_bi) : Region{_local_army}  {
+Iberia::Iberia(Army _local_army, std::shared_ptr<int> _bi) : Region{_local_army}  {
     pBarbariansInvaded = _bi;
 
     messages = {
@@ -23,12 +23,6 @@ Iberia::Iberia(Army _local_army, int *_bi) : Region{_local_army}  {
             "Q - Quit the game"
     });
     move_menu.set_valid_choices({'G', 'Q'});
-
-    local_army = Army{0, eIberia, 0};
-}
-
-Iberia::~Iberia() {
-    pBarbariansInvaded = nullptr; // responsibility for cleanup lies elsewhere
 }
 
 std::tuple<std::vector<std::string>, Phase> Iberia::location_events(Army &claudius) {

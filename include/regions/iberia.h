@@ -5,13 +5,12 @@
 
 class Iberia : public Region {
     private:
-        int *pBarbariansInvaded;
+        std::shared_ptr<int> pBarbariansInvaded;
     public:
-        Iberia(Army _local_army, int *_bi);
-        virtual ~Iberia();
+        Iberia(Army _local_army, std::shared_ptr<int> _bi);
+        virtual ~Iberia() = default;
 
         virtual std::tuple<std::vector<std::string>, Phase>location_events(Army &claudius) override;
-        void set_barbarians_invaded(int *val) {pBarbariansInvaded = val;}
 };
 
 #endif // _IBERIA_H_
