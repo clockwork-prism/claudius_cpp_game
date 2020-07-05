@@ -24,6 +24,7 @@ public:
     Location get_claudius_loc() {return claudius.location;}
     void move_location();
     void print_stats();
+    void display_map() {world.display_map(claudius);}
 };
 
 #endif //_GAMESTATE_H_

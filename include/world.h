@@ -18,6 +18,12 @@ struct World {
 
     std::shared_ptr<int> pBarbariansInvaded;
 
+    std::vector<std::string> map;
+
+    void display_map(const Army &claudius);
+    void load_map(std::string file_name);
+    void place_on_map(std::vector<std::string> &tmap, int size, char label, int row, int col);
+
     World();
     ~World() = default;
 };
