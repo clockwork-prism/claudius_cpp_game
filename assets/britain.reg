@@ -1,0 +1,26 @@
+#MES
+Your reputation precedes you, and the men of the British
+legions flock to your banner!
+#ENDMES
+#MES
+While not in a hurry to challenge you, the British legions
+will not aid your cause. Maybe if you can increase your reputation
+somehow they will join.
+#ENDMES
+#MES
+The British isles are never quite peaceful, and it would be
+dangerous to pull away any more men from the garrison. Best
+head back to the mainland soon.
+#ENDMES
+#PROMPT
+
+Where will you go?
+G - Gaul
+Q - Quit the game
+#ENDPROMPT
+#CHOICES
+GQ
+#ENDCHOICES
+#ARMY
+5000 Britain 1
+#ENDARMY

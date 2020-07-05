@@ -29,3 +29,6 @@ This branch demonstrates the utility of inheritance and polymorphism. Rather tha
 
 ## Smart Pointers
 Moving into modern C++. The pointers have been replaced by shared pointers, to make them more memory safe.
+
+## Streams
+Also exception handling, which I folded into this branch because with runtime errors I wanted a way to see where the problem was. The game now reads all values from a .reg file. This allows for fine tuning of parameters without needing to compile after each change. Also now implements a map class which displays an ascii map to the user.

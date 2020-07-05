@@ -1,0 +1,23 @@
+#MES
+As you make camp in Iberia just beyond the mountains
+you receive dire news. Barbarians have invaded Gaul!
+This is a great misfortune, though a fresh victory
+may bring more renown...
+#ENDMES
+#MES
+The Iberian peninsula is mercifully peaceful. You briefly
+allow yourself to think about quiet retirement, but the
+the war beckons.
+#ENDMES
+#PROMPT
+
+Where will you go?
+G - Gaul
+Q - Quit the game
+#ENDPROMPT
+#CHOICES
+GQ
+#ENDCHOICES
+#ARMY
+0 Iberia 0
+#ENDARMY

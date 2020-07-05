@@ -7,14 +7,35 @@
 #include <vector>
 #include <tuple>
 #include <memory>
+#include <fstream>
+#include <exception>
 
+class FileNotFoundError : public std::runtime_error {
+    public:
+        FileNotFoundError(std::string message) : std::runtime_error{message} {}
+        const char* what() const noexcept override {
+            return "File not found.";
+        }
+};
+
+class InvalidRegionFile : public std::runtime_error {
+    public:
+        InvalidRegionFile(std::string message) : std::runtime_error{message} {}
+        const char* what() const noexcept override {
+            return "Error reading in region file.";
+        }
+};
+
+void read_vec_strings(std::ifstream &file, std::vector<std::string> &vec, std::string endFlag);
 
 class Region {
     protected:
         Army local_army;
         std::vector<std::vector<std::string>> messages;
+
     public:
         Region(Army _local_army);
+        Region(std::string file_name);
 
         Menu move_menu;
 

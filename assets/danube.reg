@@ -1,0 +1,24 @@
+#MES
+The Danube legions are overjoyed to hear someone wants to kill
+Severus. Some of your officers are a little concerned at this
+quick turn around, but you need all the forces you can muster.
+#ENDMES
+#MES
+You stare at the Danube, for the moment lost in thought. Which
+river has seen more violence? The Rhine or the Danube? Staring at
+the far bank, you decide it's best to move on rather than recruit
+any more men.
+#ENDMES
+#PROMPT
+
+Where will you go?
+G - Gaul
+I - Italy
+Q - Quit the game
+#ENDPROMPT
+#CHOICES
+GIQ
+#ENDCHOICES
+#ARMY
+5005 Danube 0
+#ENDARMY

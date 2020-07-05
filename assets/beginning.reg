@@ -1,0 +1,30 @@
+#MES
+Standing in a field of victory, you survey your tired army.
+Victorious over the Gothic invaders, your men begin to ask
+why the emperor, Severus, sits in Rome while you are the one
+defending the empire. They come to you now, and proclaim you
+Augustus! How do you respond?
+#ENDMES
+
+#MES
+Then let the games begin...
+#ENDMES
+
+#MES
+Your humility is an example to all, and your reputation grows!
+But soon the men approach again, they insist you must accept
+the throne. Relenting, you agree to lead them.
+#ENDMES
+
+#PROMPT
+1 - "I accept!"
+2 - "I cannot, I am unworthy."
+#ENDPROMPT
+
+#CHOICES
+12
+#ENDCHOICES
+
+#ARMY
+0 Beginning 0
+#ENDARMY

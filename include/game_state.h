@@ -13,6 +13,7 @@ private:
 
 public:
     GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
+    GameState(std::string file_name);
     Army claudius;
     
     std::shared_ptr<Region> currentRegion;
@@ -23,6 +24,7 @@ public:
     Location get_claudius_loc() {return claudius.location;}
     void move_location();
     void print_stats();
+    void display_map() {world.display_map(claudius);}
 };
 
 #endif //_GAMESTATE_H_

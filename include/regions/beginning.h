@@ -6,6 +6,7 @@
 class Beginning: public Region {
     public:
         Beginning(Army local_army_ = Army{0, eBeginning, 0});
+        Beginning(std::string file_name);
         virtual ~Beginning() = default;
 
         virtual std::tuple<std::vector<std::string>, Phase> location_events(Army &claudius) override;

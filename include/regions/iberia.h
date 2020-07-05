@@ -8,6 +8,7 @@ class Iberia : public Region {
         std::shared_ptr<int> pBarbariansInvaded;
     public:
         Iberia(Army _local_army, std::shared_ptr<int> _bi);
+        Iberia(std::string file_name, std::shared_ptr<int> _bi);
         virtual ~Iberia() = default;
 
         virtual std::tuple<std::vector<std::string>, Phase>location_events(Army &claudius) override;

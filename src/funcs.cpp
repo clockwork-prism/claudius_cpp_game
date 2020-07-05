@@ -5,6 +5,8 @@ void main_game_loop(GameState &gameState, int sceneWidth) {
     std::tuple<std::vector<std::string>, Phase> result {
         gameState.currentRegion->location_events(gameState.claudius)
     };
+    gameState.display_map();
+    scene_break(sceneWidth);
     print_message(std::get<0>(result));
     gameState.currentPhase = std::get<1>(result);
     if (gameState.currentPhase == playing && gameState.choice != 'Q') {

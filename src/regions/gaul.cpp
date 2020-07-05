@@ -44,6 +44,8 @@ Gaul::~Gaul() {
     pBarbariansInvaded = nullptr;
 }
 
+Gaul::Gaul(std::string file, std::shared_ptr<int> bi) : Region(file), pBarbariansInvaded{bi} {}
+
 std::tuple<std::vector<std::string>, Phase> Gaul::location_events(Army &claudius) {
     int out_index {1};
     if (*(this->pBarbariansInvaded) == 1) {
