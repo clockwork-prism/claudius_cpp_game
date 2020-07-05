@@ -1,0 +1,38 @@
+#MES
+You descend on Gaul and fan out your forces to confront the
+invaders. You lose some men, but your reputation grows higher!
+
+As your army recovers, you weigh your options. To the south is
+Italy where Severus waits with his army.
+The Danube is to the east, legions there have no love for the
+emperor. To the west is Iberia, currently not garrisoned. And
+to the north lies Britain. The legions there may be more
+hesitant to follow an unknown
+#ENDMES
+
+#MES
+The familiar land of Gaul surrounds you. To the south is Italy
+where Severus waits with his army.
+The Danube is to the east, legions there have no love for the
+emperor. To the west is Iberia, currently not garrisoned. And
+to the north lies Britain. The legions there may be more
+hesitant to follow an unknown
+#ENDMES
+
+#PROMPT
+
+Where will you go?
+B - Britain
+D - Danube
+I - Italy
+E - Iberia
+Q - Quit the game
+#ENDPROMPT
+
+#CHOICES
+BDIEQ
+#ENDCHOICES
+
+#ARMY
+2000 Gaul 1
+#ENDARMY

@@ -13,6 +13,7 @@ private:
 
 public:
     GameState(Army claudius_, Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
+    GameState(std::string file_name);
     Army claudius;
     
     std::shared_ptr<Region> currentRegion;

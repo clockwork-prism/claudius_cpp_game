@@ -1,0 +1,30 @@
+#MES
+The crossing of the Alps is as smooth as it can be, Severus
+is not waiting for you on the other side. Reports are he is
+further south. You pause at the Rubicon to make camp, a part
+of you amused to think of yourself as Julius himself. The next
+day, the scouts report in. Severus approaches. You form up for
+battle.
+#ENDMES
+
+#MES
+You're exploits have reached the people of Rome, and
+now Severus's armies begin to abandon him! Your ranks swell
+but will it be enough?
+#ENDMES
+
+#PROMPT
+NO PROMPT NEEDED
+#ENDPROMPT
+
+#CHOICES
+N
+#ENDCHOICES
+
+#ARMY
+12000 Italy 2
+#ENDARMY
+
+#DEFECTIONSIZE
+2500
+#ENDDEFECTIONSIZE

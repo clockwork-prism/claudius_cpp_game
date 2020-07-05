@@ -71,3 +71,20 @@ std::ostream &operator<<(std::ostream &os, const Army &rhs) {
     );
     return os;
 }
+
+Location string_to_loc(std::string &loc) {
+    Location out;
+    if (loc == "Beginning")
+        out = eBeginning;
+    else if (loc == "Gaul")
+        out = eGaul;
+    else if (loc == "Danube")
+        out = eDanube;
+    else if (loc == "Iberia")
+        out = eIberia;
+    else if (loc == "Britain")
+        out = eBritain;
+    else if (loc == "Italy")
+        out = eItaly;
+    else throw InvalidLocationError(loc);
+}

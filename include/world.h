@@ -18,7 +18,7 @@ struct World {
 
     std::shared_ptr<int> pBarbariansInvaded;
 
-    World(Army british_, Army danube_, Army goths_, Army severus_, int defectionSize_);
+    World();
     ~World() = default;
 };
 

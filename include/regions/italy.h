@@ -8,6 +8,7 @@ class Italy : public Region {
         int defectionSize {};
     public:
         Italy(Army _local_army, int defectionSize_);
+        Italy(std::string file_name);
         virtual ~Italy() = default;
         virtual std::tuple<std::vector<std::string>, Phase> location_events(Army &claudius) override;
         Phase severus_battle(Army &claudius);

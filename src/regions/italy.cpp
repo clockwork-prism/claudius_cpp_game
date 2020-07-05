@@ -21,6 +21,21 @@ Italy::Italy(Army _local_army, int defectionSize_) : Region{_local_army}, defect
     local_army = Army {12000, eItaly, 2};
 }
 
+Italy::Italy(std::string file_name) : Region(file_name), defectionSize{} {
+    std::ifstream file;
+    file.open(file_name);
+    if (file) {
+        std::string line{};
+        while (std::getline(file, line)) {
+            if (line == "#DEFECTIONSIZE") {
+                file >> this->defectionSize;
+                break;
+            }
+        }
+    } else throw FileNotFoundError(file_name);
+    file.close();
+}
+
 std::tuple<std::vector<std::string>, Phase> Italy::location_events(Army &claudius) {
     std::vector<std::string> out_message{};
     out_message = this->messages.at(0);

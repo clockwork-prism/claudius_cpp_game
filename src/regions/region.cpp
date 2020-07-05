@@ -12,23 +12,6 @@ void read_vec_strings(std::ifstream &file, std::vector<std::string> &vec, std::s
     };
 }
 
-Location string_to_loc(std::string &loc) {
-    Location out;
-    if (loc == "Beginning")
-        out = eBeginning;
-    else if (loc == "Gaul")
-        out = eGaul;
-    else if (loc == "Danube")
-        out = eDanube;
-    else if (loc == "Iberia")
-        out = eIberia;
-    else if (loc == "Britain")
-        out = eBritain;
-    else if (loc == "Italy")
-        out = eItaly;
-    else throw InvalidRegionFile("Region information not found");
-}
-
 Region::Region(Army _local_army) : local_army{_local_army} {}
 
 Region::Region(std::string file_name): local_army{0, eBeginning, 0}, move_menu{} {

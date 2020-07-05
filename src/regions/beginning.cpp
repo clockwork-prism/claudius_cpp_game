@@ -28,6 +28,10 @@ Beginning::Beginning(Army _local_army) : Region{_local_army} {
     };
 }
 
+Beginning::Beginning(std::string file_name) : Region{file_name} {
+    
+}
+
 std::tuple<std::vector<std::string>, Phase> Beginning::location_events(Army &claudius) {
     print_message(this->messages.at(0));
 

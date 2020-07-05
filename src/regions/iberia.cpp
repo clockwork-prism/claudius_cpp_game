@@ -25,6 +25,8 @@ Iberia::Iberia(Army _local_army, std::shared_ptr<int> _bi) : Region{_local_army}
     move_menu.set_valid_choices({'G', 'Q'});
 }
 
+Iberia::Iberia(std::string file_name, std::shared_ptr<int> bi_) : Region{file_name}, pBarbariansInvaded{bi_} {}
+
 std::tuple<std::vector<std::string>, Phase> Iberia::location_events(Army &claudius) {
     int out_index {1};
     if (*(this->pBarbariansInvaded) == 0) {

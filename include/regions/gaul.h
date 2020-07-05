@@ -8,6 +8,7 @@ class Gaul: public Region {
         std::shared_ptr<int> pBarbariansInvaded;
     public:
         Gaul(Army _local_army, std::shared_ptr<int> bi);
+        Gaul(std::string file, std::shared_ptr<int> bi);
         virtual ~Gaul();
         // TODO: add move and copy constructors to handle pointer
 
