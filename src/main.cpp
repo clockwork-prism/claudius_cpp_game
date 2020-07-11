@@ -13,7 +13,7 @@ using namespace std;
 
 int main() {
 
-    print_message({
+    print_message<std::string>({
         " ------------------------------------------------------------ ",
         "|                                                            |",
         "|             Claudius: Praetorian Prefect                   |",

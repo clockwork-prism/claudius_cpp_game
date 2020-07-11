@@ -32,3 +32,6 @@ Moving into modern C++. The pointers have been replaced by shared pointers, to m
 
 ## Streams
 Also exception handling, which I folded into this branch because with runtime errors I wanted a way to see where the problem was. The game now reads all values from a .reg file. This allows for fine tuning of parameters without needing to compile after each change. Also now implements a map class which displays an ascii map to the user.
+
+## STL
+This branch felt a little anticlimactic. Given how complicated and powerful the STL is I assumed at this point I would implement all kinds of things. But looking back I've been using the STL all along. Templates are new and were a good inclusion.
