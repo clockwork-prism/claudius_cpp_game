@@ -14,6 +14,9 @@ void main_game_loop(GameState &gameState, int sceneWidth) {
         gameState.choice = gameState.currentRegion->move_menu.get_user_input();
         gameState.move_location();
     } else if (gameState.currentPhase == starting) {
+        std::cout << "Type any key to continue." << std::endl;
+        char temp {};
+        std::cin >> temp;
         gameState.choice = 'G';
         gameState.move_location();
     }
@@ -42,6 +45,8 @@ void game_end(GameState &gameState) {
     }
 
     std::cout << "GAME OVER" << std::endl;
+    char temp {};
+    std::cin >> temp;
 }
 
 void scene_break(int sceneWidth) {
