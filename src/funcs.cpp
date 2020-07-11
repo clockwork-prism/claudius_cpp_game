@@ -21,7 +21,7 @@ void main_game_loop(GameState &gameState, int sceneWidth) {
 
 void game_end(GameState &gameState) {
     if (gameState.currentPhase == victory) {
-        print_message({
+        print_message<std::string>({
             "As the dust clears, you see Severus's army either surrendering",
             "or fleeing. You give orders for generous quarter to be given,",
             "and search out Severus. You find him dead, a slave having assisted",
@@ -31,7 +31,7 @@ void game_end(GameState &gameState) {
             "how long will you keep it?"
         });
     } else if (gameState.currentPhase == defeat) {
-        print_message({
+        print_message<std::string>({
             "You stare in stunned silence as first the left flank collapses,",
             "then the right. Your center backs up trying to prevent a gap in the",
             "line, but this soon becomes a route. Your whole army is in flight, and",
